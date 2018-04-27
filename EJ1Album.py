@@ -11,12 +11,13 @@ class Album(object):
         self.listaCanciones.append(unaCancion)
 
     def MostrarArtistas(self):
+
         listaDeArtistasDeAlbum = []
 
         for cancion in self.listaCanciones:
             for artista in cancion.listaArtistas:
-                if artista not in self.listaArtistas:
-                    listaDeArtistasDeAlbum.append(artista)
+                if artista.nombre not in listaDeArtistasDeAlbum:
+                    listaDeArtistasDeAlbum.append(artista.nombre)
 
         return listaDeArtistasDeAlbum
 
@@ -27,7 +28,7 @@ class Album(object):
 
         for canciones in self.listaCanciones:
             for artista in canciones.listaArtistas:
-                listaAuxiliar.append(artista)
+                listaAuxiliar.append(artista.apellido)
 
 
         contadorTotal = 0
@@ -39,27 +40,20 @@ class Album(object):
                 if item == item2:
                     contador += 1
             if contador >= contadorTotal:
-
-
-
-
-
-
-
                 contadorTotal = contador
                 artistaMasInfluyente = item
 
 
         return artistaMasInfluyente
 
-    def CancionesPorNacionalidad(self, nacionalidad):
+    def AutoresPorNacionalidad(self, nacionalidad):
 
         listaAutoresNacionalidad = []
 
         for cancion in self.listaCanciones:
             for autor in cancion.listaAutores:
                 if autor.nacionalidad == nacionalidad:
-                    listaAutoresNacionalidad.append(autor)
+                    listaAutoresNacionalidad.append(autor.apellido)
 
         return listaAutoresNacionalidad
 
