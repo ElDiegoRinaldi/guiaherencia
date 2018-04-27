@@ -14,3 +14,9 @@ class Discografica(object):
                 return False
 
         self.listaAlbums.append(unAlbum)
+
+    def ArtistaMasInfluyente(self, unAlbum):
+
+        for albumes in self.listaAlbums:
+            if albumes == unAlbum:
+                return albumes.ArtistaMasInfluyente()

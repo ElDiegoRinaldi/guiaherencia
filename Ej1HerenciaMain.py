@@ -39,7 +39,8 @@ elAutor = Autor('Manuel','Richar',datetime.date(2001,3,13), 'jamaIkano')
 laCancion.agregarAutor(elAutor)
 elAlbum.agregarCancion(laCancion)
 
+laDiscografica.agregarAlbum(elAlbum)
 
-#print(elAlbum.MostrarArtistas())
-#print(elAlbum.ArtistaMasInfluyente())
+print(elAlbum.MostrarArtistas())
+print(laDiscografica.ArtistaMasInfluyente(elAlbum))
 print(elAlbum.AutoresPorNacionalidad('jamaikano'))
